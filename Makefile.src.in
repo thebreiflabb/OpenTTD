@@ -76,8 +76,6 @@ all: $(BIN_DIR)/$(TTD)
 #  takes care of it nicely.
 $(LANG_OBJS_DIR)/$(STRGEN):
 	$(MAKE) -C $(LANG_OBJS_DIR) $(STRGEN)
-	cp $(ROOT_DIR)/strgen $(LANG_OBJS_DIR)/$(STRGEN)
-	cp $(ROOT_DIR)/strgen $(LANG_OBJS_DIR)/$(STRGEN)2
 
 $(LANG_OBJS_DIR)/table/strings.h: $(LANG_DIR)/english.txt $(LANG_OBJS_DIR)/$(STRGEN)
 	$(MAKE) -C $(LANG_OBJS_DIR) table/strings.h
