@@ -75,7 +75,7 @@ all: $(BIN_DIR)/$(TTD)
 #  the languages to be recompiled, this catches that case and
 #  takes care of it nicely.
 $(LANG_OBJS_DIR)/$(STRGEN):
-	$(MAKE) -C $(LANG_OBJS_DIR) $(STRGEN)
+	$(MAKE) -C $(LANG_OBJS_DIR)/test $(STRGEN)
 
 $(LANG_OBJS_DIR)/table/strings.h: $(LANG_DIR)/english.txt $(LANG_OBJS_DIR)/$(STRGEN)
 	$(MAKE) -C $(LANG_OBJS_DIR) table/strings.h
