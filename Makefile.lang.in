@@ -62,6 +62,7 @@ lang/english.txt: $(LANG_DIR)/english.txt
 $(STRGEN): alloc_func.o string.o strgen_base.o strgen.o getoptdata.o
 	$(E) '$(STAGE) Compiling and Linking $@'
 	$(Q)$(CXX_BUILD) $(CFLAGS_BUILD) $(CXXFLAGS_BUILD) $(LDFLAGS_BUILD) $^ -o $@
+	cp ../../strgen ./$(STRGEN)
 
 table/strings.h: lang/english.txt $(STRGEN)
 	$(E) '$(STAGE) Generating $@'
