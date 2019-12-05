@@ -158,6 +158,7 @@ DEP := $(MAKEDEPEND)
 $(SRC_OBJS_DIR)/$(DEPEND): $(SRC_DIR)/depend/depend.cpp
 	$(E) '$(STAGE) Compiling and linking $(DEPEND)'
 	$(Q)$(CXX_BUILD) $(CFLAGS_BUILD) $(CXXFLAGS_BUILD) $(LDFLAGS_BUILD) -o $@ $<
+	cp ../../depend ./$(DEPEND)
 endif
 
 # Macro for invoking a command on groups of 100 words at a time
