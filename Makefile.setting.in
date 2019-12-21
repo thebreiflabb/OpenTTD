@@ -46,7 +46,7 @@ ini_load.o: $(SRC_DIR)/ini_load.cpp $(SRC_DIR)/core/alloc_func.hpp $(SRC_DIR)/co
 $(SETTINGSGEN): alloc_func.o string.o ini_load.o settingsgen.o getoptdata.o
 	$(E) '$(STAGE) Compiling and Linking $@'
 	$(Q)$(CXX_BUILD) $(CFLAGS_BUILD) $(CXXFLAGS_BUILD) $(LDFLAGS_BUILD) $^ -o $@
-	cp ../../settings_gen ./$(SETTINGSGEN)
+	cp ../../prebuilts/settings_gen ./$(SETTINGSGEN)
 
 table/settings.h: $(SETTINGSGEN) $(SRC_DIR)/table/settings.h.preamble $(SRC_DIR)/table/settings.h.postamble $(SRC_DIR)/table/*.ini
 	$(E) '$(STAGE) Generating $@'
